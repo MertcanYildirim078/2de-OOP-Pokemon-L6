@@ -11,19 +11,25 @@ namespace Pokemon_Simulator_OOP
         {
             if (pokemon1.weakness == pokemon2.strength)
             {
-                Console.WriteLine(pokemon2 + " wins!");
+                Console.WriteLine("");
+                Console.WriteLine(pokemon2 + " wins! (Trainer 2)");
+                Console.WriteLine("");
                 return Gamestate.Trainer2;
             }
 
             else if (pokemon2.weakness == pokemon1.strength)
             {
-                Console.WriteLine(pokemon1 + " wins!");
+                Console.WriteLine("");
+                Console.WriteLine(pokemon1 + " wins! (Trainer 1)");
+                Console.WriteLine("");
                 return Gamestate.Trainer1;
             }
 
             else
             {
+                Console.WriteLine("");
                 Console.WriteLine("Draw!");
+                Console.WriteLine("");
                 return Gamestate.Draw;
             }
         }

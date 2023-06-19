@@ -1,5 +1,6 @@
 ﻿
 using Pokemon_Simulator_OOP;
+using System.Data;
 
 class Arena
 {
@@ -18,12 +19,24 @@ class Arena
 
     public void arenaBattle()
     {
+        Trainer.Shuffle(trainer1.belt);
+        Trainer.Shuffle(trainer2.belt);
+        
         int stopBattle = 0;
         while (stopBattle == 0)
         {
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("");
+            Console.WriteLine($"Trainer 1's pokemon: {trainer1.belt[currentPokemon1].pokemon}");
+            Console.WriteLine("");
+            Console.WriteLine($"Trainer 2's pokemon: {trainer2.belt[currentPokemon2].pokemon}");
+            Console.WriteLine("");
+            Console.WriteLine("-------------------------------------------");
+
             Battle battle = new Battle();
             Result = battle.battle(trainer1.belt[currentPokemon1].pokemon, trainer2.belt[currentPokemon2].pokemon);
             Thread.Sleep(2000);
+
             if (Result == Gamestate.Draw)
             {
                 currentPokemon1++;

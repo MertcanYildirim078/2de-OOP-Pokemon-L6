@@ -7,7 +7,6 @@ public class Squirtle : Pokemon
 
     public override void BattleCry()
     {
-       Console.WriteLine("Squirtle!");
+        Console.WriteLine("Squirtle!");
     }
-
 }

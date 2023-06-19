@@ -1,14 +1,31 @@
-﻿
-class Pokeball
+﻿class Pokeball
 {
-    public bool empty;
-    public bool open;
-    public Pokemon pokemon;
+    private bool empty;
+    private bool open;
+    private Pokemon pokemon;
+
+    public bool Empty
+    {
+        get { return empty; }
+        set { empty = value; }
+    }
+
+    public bool Open
+    {
+        get { return open; }
+        set { open = value; }
+    }
+
+    public Pokemon Pokemon
+    {
+        get { return pokemon; }
+        set { pokemon = value; }
+    }
 
     public Pokeball(Pokemon pokemon)
     {
-        this.empty = false;
-        this.open = false;
-        this.pokemon = pokemon;
+        Empty = false;
+        Open = false;
+        Pokemon = pokemon;
     }
 }

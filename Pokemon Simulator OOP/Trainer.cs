@@ -1,4 +1,6 @@
 ﻿
+using System.Xml.Linq;
+
 class Trainer
 {
     public string name;
@@ -6,15 +8,16 @@ class Trainer
     public List<Pokeball> belt = new List<Pokeball>();
 
     // add a pokeball to the belt
-
     public Trainer(string name)
     {
         this.name = name;
     }
+
     public void addPokeball(Pokeball pokeball)
-    {   
-            belt.Add(pokeball);   
+    {
+        belt.Add(pokeball);
     }
+
     public static void Shuffle<T>(List<T> list)
     {
         Random random = new Random();

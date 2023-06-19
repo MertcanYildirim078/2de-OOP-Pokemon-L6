@@ -7,6 +7,8 @@ using System.Collections.Generic;
 6 nieuwe pokemon
 6 nieuwe pokeball
 add to belt*/
+/*   for Pokeball pokeball : trainer.getBelt())*/
+/*    Dit al in je class zetten en aanroepen is innheritannce en de relatie tussen bijde is polyforphisme e en via superclass suclass te kunnnen gebruiken*/
 
 int stop = 0;
 
@@ -21,9 +23,6 @@ while (stop == 0)
 
     Trainer trainer = new Trainer(askTrainerName);
     Trainer trainer2 = new Trainer(askSecondTrainerName);
-
-    /*   for Pokeball pokeball : trainer.getBelt())*/
-    /*    Dit al in je class zetten en aanroepen is innheritannce en de relatie tussen bijde is polyforphisme e en via superclass suclass te kunnnen gebruiken*/
 
     Pokemon charMander1 = new Charmander();
     Pokemon Squirtle1 = new Squirtle();
@@ -55,7 +54,7 @@ while (stop == 0)
 
     Arena arena = new Arena(trainer, trainer2);
 
-    arena.arenaBattle();
+    arena.ArenaBattle();
 
     int stop2 = 0;
 

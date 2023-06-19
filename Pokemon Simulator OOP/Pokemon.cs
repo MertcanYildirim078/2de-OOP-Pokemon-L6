@@ -1,9 +1,24 @@
 ﻿/*abstract om het alleen te kunnen gebruiken met sub classes*/
 public abstract class Pokemon
 {
-    public string name;
-    public string strength;
-    public string weakness;
+    private readonly string name;
+    private readonly string strength;
+    private readonly string weakness;
+
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public string Strength
+    {
+        get { return strength; }
+    }
+
+    public string Weakness
+    {
+        get { return weakness; }
+    }
 
     public Pokemon(string name, string strength, string weakness)
     {
@@ -13,7 +28,7 @@ public abstract class Pokemon
     }
 
     public abstract void BattleCry();
-
-  /*  abstract  om bij de subclasses te kunnen gebruiken soort van functie*/
-
 }
+
+
+/*  abstract  om bij de subclasses te kunnen gebruiken soort van functie*/

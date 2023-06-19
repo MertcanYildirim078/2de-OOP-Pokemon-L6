@@ -1,6 +1,6 @@
-﻿
-using Pokemon_Simulator_OOP;
-using System.Data;
+﻿using Pokemon_Simulator_OOP;
+using System.ComponentModel;
+using System.Threading;
 
 class Arena
 {
@@ -10,60 +10,92 @@ class Arena
     private int currentPokemon1 = 0;
     private int currentPokemon2 = 0;
 
-    private Gamestate Result = Gamestate.Draw;
+    private Gamestate result = Gamestate.Draw;
+
+/*    Propertys zijn ook getters en setters en gebruikt het automatische manual is 
+        
+    private string name
+
+    public string name {
+    
+    return this.name;
+}
+ 
+ */
+    public Trainer Trainer1
+    {
+        get { return trainer1; }
+        set { trainer1 = value; }
+    }
+
+    public Trainer Trainer2
+    {
+        get { return trainer2; }
+        set { trainer2 = value; }
+    }
+
+    public int CurrentPokemon1
+    {
+        get { return currentPokemon1; }
+        set { currentPokemon1 = value; }
+    }
+
+    public int CurrentPokemon2
+    {
+        get { return currentPokemon2; }
+        set { currentPokemon2 = value; }
+    }
+
+    public Gamestate Result
+    {
+        get { return result; }
+        set { result = value; }
+    }
+
     public Arena(Trainer trainer1, Trainer trainer2)
     {
         this.trainer1 = trainer1;
         this.trainer2 = trainer2;
     }
 
-    public void arenaBattle()
+    public void ArenaBattle()
     {
         Trainer.Shuffle(trainer1.belt);
         Trainer.Shuffle(trainer2.belt);
-        
+
         int stopBattle = 0;
         while (stopBattle == 0)
         {
             Console.WriteLine("-------------------------------------------");
             Console.WriteLine("");
-            Console.WriteLine($"Trainer 1's pokemon: {trainer1.belt[currentPokemon1].pokemon}");
+            Console.WriteLine($"{trainer1.name}'s pokemon: {trainer1.belt[CurrentPokemon1].Pokemon}");
             Console.WriteLine("");
-            Console.WriteLine($"Trainer 2's pokemon: {trainer2.belt[currentPokemon2].pokemon}");
+            Console.WriteLine($"{trainer2.name}'s pokemon: {trainer2.belt[CurrentPokemon2].Pokemon}");
             Console.WriteLine("");
             Console.WriteLine("-------------------------------------------");
 
             Battle battle = new Battle();
-            Result = battle.battle(trainer1.belt[currentPokemon1].pokemon, trainer2.belt[currentPokemon2].pokemon);
+            Result = battle.battle(trainer1.belt[CurrentPokemon1].Pokemon, trainer2.belt[CurrentPokemon2].Pokemon);
             Thread.Sleep(2000);
 
             if (Result == Gamestate.Draw)
             {
-                currentPokemon1++;
-                currentPokemon2++;
+                CurrentPokemon1++;
+                CurrentPokemon2++;
             }
-
             else if (Result == Gamestate.Trainer2)
             {
-                currentPokemon2++;
+                CurrentPokemon2++;
             }
-
             else
             {
-                currentPokemon1++;
+                CurrentPokemon1++;
             }
 
-            if (trainer1.belt.Count <= currentPokemon1)
+            if (Trainer1.belt.Count <= CurrentPokemon1 || trainer2.belt.Count <= CurrentPokemon2)
             {
                 stopBattle = 1;
             }
-            
-            else if (trainer2.belt.Count <= currentPokemon2)
-            {
-                stopBattle = 1;
-            }
-
         }
     }
 }
-

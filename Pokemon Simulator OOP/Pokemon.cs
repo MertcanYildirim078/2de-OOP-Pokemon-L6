@@ -1,26 +1,32 @@
 ﻿/*abstract om het alleen te kunnen gebruiken met sub classes*/
 public abstract class Pokemon
 {
-    private readonly string name;
-    private readonly string strength;
-    private readonly string weakness;
+    public enum PokemonType
+    {
+       Fire,
+       Water,
+       Grass
+    }
 
+    private readonly string name;
+    private readonly PokemonType strength;
+    private readonly PokemonType weakness;
     public string Name
     {
         get { return name; }
     }
 
-    public string Strength
+    public PokemonType Strength
     {
         get { return strength; }
     }
 
-    public string Weakness
+    public PokemonType Weakness
     {
         get { return weakness; }
     }
 
-    public Pokemon(string name, string strength, string weakness)
+    public Pokemon(string name, PokemonType strength, PokemonType weakness)
     {
         this.name = name;
         this.strength = strength;

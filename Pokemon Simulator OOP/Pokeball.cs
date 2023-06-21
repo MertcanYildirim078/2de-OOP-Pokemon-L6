@@ -2,7 +2,7 @@
 {
     private bool empty;
     private bool open;
-    private Pokemon pokemon;
+    private readonly Pokemon pokemon;
 
     public bool Empty
     {
@@ -19,13 +19,12 @@
     public Pokemon Pokemon
     {
         get { return pokemon; }
-        set { pokemon = value; }
     }
 
     public Pokeball(Pokemon pokemon)
     {
         Empty = false;
         Open = false;
-        Pokemon = pokemon;
+        this.pokemon = pokemon;
     }
 }

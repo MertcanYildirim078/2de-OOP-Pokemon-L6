@@ -1,13 +1,22 @@
-﻿
-using System.Xml.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 class Trainer
 {
-    public string name;
-    // has belt
-    public List<Pokeball> belt = new List<Pokeball>();
+    private string name;
+    private List<Pokeball> belt = new List<Pokeball>();
 
-    // add a pokeball to the belt
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public List<Pokeball> Belt
+    {
+        get { return belt; }
+    }
+
     public Trainer(string name)
     {
         this.name = name;
@@ -15,7 +24,14 @@ class Trainer
 
     public void addPokeball(Pokeball pokeball)
     {
-        belt.Add(pokeball);
+        if (belt.Count < 6)
+        {
+            belt.Add(pokeball);
+        }
+        else
+        {
+            throw new Exception("The trainer's belt is already full. Cannot add more pokeballs.");
+        }
     }
 
     public static void Shuffle<T>(List<T> list)

@@ -2,7 +2,7 @@
 
 public class Bulbasaur : Pokemon
 {
-    public Bulbasaur() : base("Bulbasaur", "Grass", "Fire")
+    public Bulbasaur() : base("Bulbasaur", PokemonType.Grass, PokemonType.Fire)
     {
     }
 

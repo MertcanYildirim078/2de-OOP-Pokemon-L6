@@ -60,22 +60,22 @@ class Arena
 
     public void ArenaBattle()
     {
-        Trainer.Shuffle(trainer1.belt);
-        Trainer.Shuffle(trainer2.belt);
+        Trainer.Shuffle(trainer1.Belt);
+        Trainer.Shuffle(trainer2.Belt);
 
         int stopBattle = 0;
         while (stopBattle == 0)
         {
             Console.WriteLine("-------------------------------------------");
             Console.WriteLine("");
-            Console.WriteLine($"{trainer1.name}'s pokemon: {trainer1.belt[CurrentPokemon1].Pokemon}");
+            Console.WriteLine($"{trainer1.Name}'s pokemon: {trainer1.Belt[CurrentPokemon1].Pokemon}");
             Console.WriteLine("");
-            Console.WriteLine($"{trainer2.name}'s pokemon: {trainer2.belt[CurrentPokemon2].Pokemon}");
+            Console.WriteLine($"{trainer2.Name}'s pokemon: {trainer2.Belt[CurrentPokemon2].Pokemon}");
             Console.WriteLine("");
             Console.WriteLine("-------------------------------------------");
 
             Battle battle = new Battle();
-            Result = battle.battle(trainer1.belt[CurrentPokemon1].Pokemon, trainer2.belt[CurrentPokemon2].Pokemon);
+            Result = battle.battle(trainer1.Belt[CurrentPokemon1].Pokemon, trainer2.Belt[CurrentPokemon2].Pokemon);
             Thread.Sleep(2000);
 
             if (Result == Gamestate.Draw)
@@ -92,7 +92,7 @@ class Arena
                 CurrentPokemon1++;
             }
 
-            if (Trainer1.belt.Count <= CurrentPokemon1 || trainer2.belt.Count <= CurrentPokemon2)
+            if (Trainer1.Belt.Count <= CurrentPokemon1 || trainer2.Belt.Count <= CurrentPokemon2)
             {
                 stopBattle = 1;
             }

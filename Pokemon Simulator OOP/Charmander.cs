@@ -1,6 +1,6 @@
 ﻿public class Charmander : Pokemon
 {
-    public Charmander() : base("Charmander", "Fire", "Water")
+    public Charmander() : base("Charmander", PokemonType.Fire, PokemonType.Water)
     {
     }
 

@@ -1,7 +1,7 @@
 ﻿
 public class Squirtle : Pokemon
 {
-    public Squirtle() : base("Squirtle", "Water", "Grass")
+    public Squirtle() : base("Squirtle", PokemonType.Water, PokemonType.Grass)
     {
     }
 
